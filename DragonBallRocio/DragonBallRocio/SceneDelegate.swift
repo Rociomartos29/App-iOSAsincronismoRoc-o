@@ -37,9 +37,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         self.window!.makeKeyAndVisible()
                     }
                 case .success:
-                    ""
+                    DispatchQueue.main.async {
+                        print("vamos pal home")
+                        nav = UINavigationController(rootViewController: HerosTableViewController(appState: self.appState, viewModel: HerosViewModel()))
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 case .error:
-                    ""
+                    //error
+                    DispatchQueue.main.async {
+                        print("vamos pal error")
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 }
             }
             )
