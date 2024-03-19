@@ -15,31 +15,38 @@ protocol NetworkHerosProtocol {
 final class NetworkHeros: NetworkHerosProtocol{
     func getHeros(filter: String) async -> [HerosModel] {
         var modelReturn = [HerosModel]()
+        
         let urlCad = "\(ConstantApp.CONST_API_URL)\(Endpoints.heros.rawValue)"
         var request = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.post
         request.httpBody = try? JSONEncoder().encode(HerosModelRequest(name: filter))
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
         
-        //Token jwt
+        //neceistamos el token JWT
+        let tokenJWT = KeyChainKC().loadKC(key: ConstantApp.CONST_TOKEN_ID_KEYCHAIN)
         
-        let tokenJTW = KeyChainKC().loadKC(key: ConstantApp.CONST_TOKEN_ID_KEYCHAIN)
-        if let token = tokenJTW{
+        if let token = tokenJWT {
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            
         }
+        
+        //Call to Server Side
         do{
             let (data, response) = try await URLSession.shared.data(for: request)
-            if let resp = response as? HTTPURLResponse{
-                if resp.statusCode == HTTPResponseCodes.SUCESS{
+            
+            if let resp = response as? HTTPURLResponse {
+                if resp.statusCode == HTTPResponseCodes.SUCESS {
                     modelReturn = try! JSONDecoder().decode([HerosModel].self, from: data)
                 }
             }
-        }catch{
+            
+        } catch {
             
         }
         return modelReturn
     }
 }
+
+
 
 final class NetworkHerosFake: NetworkHerosProtocol {
     func getHeros(filter: String) async -> [HerosModel] {
@@ -52,5 +59,3 @@ final class NetworkHerosFake: NetworkHerosProtocol {
        
     }
 }
-
-

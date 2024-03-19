@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 case .success:
                     DispatchQueue.main.async {
-                        print("vamos pal home")
+                        print("Cambiando a la pantalla de héroes")
                         nav = UINavigationController(rootViewController: HerosTableViewController(appState: self.appState, viewModel: HerosViewModel()))
                         self.window!.rootViewController = nav
                         self.window!.makeKeyAndVisible()

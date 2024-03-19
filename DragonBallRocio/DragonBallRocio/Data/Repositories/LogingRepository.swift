@@ -9,7 +9,7 @@ import Foundation
 
 // Caso Real
 
-final class LogingRepository: LoginRepositoryProtocol{
+final class LoginRepository: LoginRepositoryProtocol{
 
     private var netWork: NetworkLoginProtocol
     

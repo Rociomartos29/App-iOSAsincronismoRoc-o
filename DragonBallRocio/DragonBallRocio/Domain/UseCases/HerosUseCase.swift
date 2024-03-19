@@ -15,17 +15,17 @@ protocol HerosUseCaseProtocol{
 // Caso Real
 final class HerosUseCase: HerosUseCaseProtocol{
     var repo: HerosRepositoryProtocol
-    init(repo: HerosRepositoryProtocol = HerosRepository(Network: NetworkHeros())) {
+    
+    init(repo: HerosRepositoryProtocol = HerosRepository(Network: NetworkHeros())){
         self.repo = repo
     }
-    
+
     func getHeros(filter: String) async -> [HerosModel] {
         await repo.getHeros(filter: filter)
     }
-    
-
 }
-//Caso Fake
+
+//Fake
 final class HeroUseCaseFake: HerosUseCaseProtocol{
     var repo: HerosRepositoryProtocol
     
@@ -37,6 +37,5 @@ final class HeroUseCaseFake: HerosUseCaseProtocol{
         await repo.getHeros(filter: filter)
     }
 }
-
 
 

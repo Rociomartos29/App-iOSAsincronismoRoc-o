@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HTTPMethods{
+struct HTTPMethods {
     static let post = "POST"
     static let get = "GET"
     static let put = "PUT"

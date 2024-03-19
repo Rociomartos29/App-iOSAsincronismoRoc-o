@@ -19,23 +19,31 @@ enum LoginStatus{
 
 final class LoginViewModel{
     
-   //Estado del Login
-    @Published var statusLogin: LoginStatus = .none
+    //estado del login
+    @Published var statusLogin : LoginStatus = .none
     
     private var loginUseCase: LoginUseCaseProtocol
     
     init(loginUseCase: LoginUseCaseProtocol = LoginUseCase()) {
         self.loginUseCase = loginUseCase
     }
+    
+    
+    //funcion de login
     func loginApp(user: String, pass: String){
+        
         Task{
             if (await loginUseCase.loginApp(user: user, password: pass)){
+                //login success
                 self.statusLogin = .success
-            }else{
-                self.statusLogin = .notValidate
+            } else {
+                //login error
+                self.statusLogin = .error
             }
         }
     }
+    
+    //evaluo autologin
     func validateControlLogin(){
         Task{
             if (await loginUseCase.validateToken()){
@@ -46,10 +54,15 @@ final class LoginViewModel{
             }
         }
     }
-    func closeSessionUser(){
+    
+    func closeSessionUser() {
         Task{
             await loginUseCase.logout()
-            self.statusLogin = .none
+            self.statusLogin = .none  //que vaya al login
+            
         }
     }
+    
+    
+    
 }

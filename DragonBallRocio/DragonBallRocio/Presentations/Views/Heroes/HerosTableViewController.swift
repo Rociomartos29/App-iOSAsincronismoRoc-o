@@ -70,5 +70,21 @@ class HerosTableViewController: UITableViewController {
 
         return cell
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+            
+            // Obtener el héroe seleccionado
+            let selectedHero = viewModel.herosData[indexPath.row]
+            
+            // Configurar el DetailViewController y pasar el héroe seleccionado
+            let detailViewController = DetailViewController()
+            detailViewController.hero = selectedHero
+            
+            // Presentar el DetailViewController
+            navigationController?.pushViewController(detailViewController, animated: true)
+       }
     
 }
