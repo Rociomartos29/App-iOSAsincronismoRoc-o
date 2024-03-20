@@ -8,18 +8,21 @@
 
 import UIKit
 
+
 extension UIImageView {
-    func loadImageRemote(url: URL){
-        DispatchQueue.global().async {[weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let imagen = UIImage(data: data){
-                    //todo OK.
-                    DispatchQueue.main.async {
-                        self?.image = imagen
-                    }
-                }
+    func loadImageAsync(from url: URL) {
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self,
+                  let data = data,
+                  error == nil,
+                  let image = UIImage(data: data) else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = image
             }
         }
+        task.resume()
     }
-    
 }

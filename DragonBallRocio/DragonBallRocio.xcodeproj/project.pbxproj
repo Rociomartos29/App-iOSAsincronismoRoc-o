@@ -46,7 +46,10 @@
 		363D66BA2BAA2D8B00B46B5F /* TransformationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66B92BAA2D8B00B46B5F /* TransformationsViewModel.swift */; };
 		363D66C32BAA369000B46B5F /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363D66C22BAA369000B46B5F /* Detail.xib */; };
 		363D66C42BAA369000B46B5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66C12BAA369000B46B5F /* DetailViewController.swift */; };
-		363D66C62BAA3A3800B46B5F /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66C52BAA3A3800B46B5F /* HeroDetailUseCase.swift */; };
+		363D66C82BAB66BD00B46B5F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66C72BAB66BD00B46B5F /* DetailViewModel.swift */; };
+		363D66CA2BAB66DE00B46B5F /* Detalles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66C92BAB66DE00B46B5F /* Detalles.swift */; };
+		363D66CC2BAB6B6E00B46B5F /* DetallesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66CB2BAB6B6E00B46B5F /* DetallesUseCase.swift */; };
+		363D66CE2BAB6F1200B46B5F /* DetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D66CD2BAB6F1200B46B5F /* DetailsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +111,10 @@
 		363D66B92BAA2D8B00B46B5F /* TransformationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsViewModel.swift; sourceTree = "<group>"; };
 		363D66C12BAA369000B46B5F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		363D66C22BAA369000B46B5F /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
-		363D66C52BAA3A3800B46B5F /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
+		363D66C72BAB66BD00B46B5F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		363D66C92BAB66DE00B46B5F /* Detalles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalles.swift; sourceTree = "<group>"; };
+		363D66CB2BAB6B6E00B46B5F /* DetallesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesUseCase.swift; sourceTree = "<group>"; };
+		363D66CD2BAB6F1200B46B5F /* DetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +251,7 @@
 				363D66892BA74ED500B46B5F /* HerosRepository.swift */,
 				363D66902BA7531C00B46B5F /* LogingRepository.swift */,
 				363D66B52BAA235100B46B5F /* TransformationsRepository.swift */,
+				363D66CD2BAB6F1200B46B5F /* DetailsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -265,7 +272,7 @@
 				363D66922BA757A000B46B5F /* LoginUseCase.swift */,
 				363D669D2BA76AC200B46B5F /* HerosUseCase.swift */,
 				363D66B12BAA232600B46B5F /* TransformationsUseCase.swift */,
-				363D66C52BAA3A3800B46B5F /* HeroDetailUseCase.swift */,
+				363D66CB2BAB6B6E00B46B5F /* DetallesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -275,6 +282,7 @@
 			children = (
 				363D667A2BA74B4E00B46B5F /* HerosModel.swift */,
 				363D66AF2BAA22C500B46B5F /* Transformacione.swift */,
+				363D66C92BAB66DE00B46B5F /* Detalles.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 				363D66982BA75F3D00B46B5F /* AppState.swift */,
 				363D66A12BA76C1700B46B5F /* HerosVieeModel.swift */,
 				363D66B92BAA2D8B00B46B5F /* TransformationsViewModel.swift */,
+				363D66C72BAB66BD00B46B5F /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -513,19 +522,22 @@
 				363D66B42BAA234100B46B5F /* TransformationsRepositoryProtocol.swift in Sources */,
 				363D66C42BAA369000B46B5F /* DetailViewController.swift in Sources */,
 				363D667D2BA74BC500B46B5F /* LoginRepositoryProtocol.swift in Sources */,
-				363D66C62BAA3A3800B46B5F /* HeroDetailUseCase.swift in Sources */,
 				363D66A62BA76D1400B46B5F /* HerosTableViewController.swift in Sources */,
 				363D66B62BAA235100B46B5F /* TransformationsRepository.swift in Sources */,
 				363D667B2BA74B4E00B46B5F /* HerosModel.swift in Sources */,
+				363D66CA2BAB66DE00B46B5F /* Detalles.swift in Sources */,
+				363D66C82BAB66BD00B46B5F /* DetailViewModel.swift in Sources */,
 				363D66B22BAA232600B46B5F /* TransformationsUseCase.swift in Sources */,
 				363D66BA2BAA2D8B00B46B5F /* TransformationsViewModel.swift in Sources */,
 				363D668A2BA74ED500B46B5F /* HerosRepository.swift in Sources */,
 				363D663A2BA7479700B46B5F /* SceneDelegate.swift in Sources */,
 				363D667F2BA74C1900B46B5F /* HerosRepositoryProtocol.swift in Sources */,
+				363D66CC2BAB6B6E00B46B5F /* DetallesUseCase.swift in Sources */,
 				363D66862BA74D9500B46B5F /* HTTPResponseCodes.swift in Sources */,
 				363D66832BA74CB800B46B5F /* Endpoints.swift in Sources */,
 				363D66B82BAA237300B46B5F /* NetworkTransformations.swift in Sources */,
 				363D66992BA75F3D00B46B5F /* AppState.swift in Sources */,
+				363D66CE2BAB6F1200B46B5F /* DetailsRepository.swift in Sources */,
 				363D66932BA757A000B46B5F /* LoginUseCase.swift in Sources */,
 				363D66812BA74C6500B46B5F /* ConstantApp.swift in Sources */,
 				363D66882BA74E1800B46B5F /* HTTPMethods.swift in Sources */,

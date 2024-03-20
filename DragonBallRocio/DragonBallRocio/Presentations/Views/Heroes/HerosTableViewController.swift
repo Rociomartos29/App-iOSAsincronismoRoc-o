@@ -10,7 +10,7 @@ import Combine
 
 
 class HerosTableViewController: UITableViewController {
-        //TODO: viewModel, appState, heroes
+    //TODO: viewModel, appState, heroes
     private var appState: LoginViewModel
     private var viewModel: HerosViewModel
     
@@ -21,7 +21,7 @@ class HerosTableViewController: UITableViewController {
         self.appState = appState
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-      
+        
     }
     
     required init?(coder: NSCoder) {
@@ -30,13 +30,15 @@ class HerosTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate.self
+        tableView.dataSource.self
         tableView.register(UINib(nibName: "HerosTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         self.title = "Lista de Heroes"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeSessions))
         bindingUI()
-
+        
     }
     @objc func closeSessions(){
         appState.closeSessionUser()
@@ -49,42 +51,49 @@ class HerosTableViewController: UITableViewController {
             })
             .store(in: &suscriptor)
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.herosData.count
     }
-
-   
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HerosTableViewCell
         
         let hero = viewModel.herosData[indexPath.row]
         cell.nameHero.text = hero.name
-        cell.imagHero.loadImageRemote(url: URL(string: hero.photo)!)
-
+        cell.imagHero.loadImageAsync(from: URL(string: hero.photo)!)
+        cell.isUserInteractionEnabled = true
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-            
-            // Obtener el héroe seleccionado
-            let selectedHero = viewModel.herosData[indexPath.row]
-            
-            // Configurar el DetailViewController y pasar el héroe seleccionado
-            let detailViewController = DetailViewController()
-            detailViewController.hero = selectedHero
-            
-            // Presentar el DetailViewController
-            navigationController?.pushViewController(detailViewController, animated: true)
-       }
+        
+        // Obtengo el héroe seleccionado
+        let selectedHero = viewModel.herosData[indexPath.row]
+        
+        // Convierto el UUID del héroe a String
+        let heroIDString = selectedHero.id.uuidString
+        
+        // Imprimo el ID del héroe seleccionado
+        print("ID del héroe seleccionado:", heroIDString)
+        
+        // Creo e inicializo el DetailViewController
+        let detailViewController = DetailViewController()
+        
+        // Configuro el ID del héroe seleccionado
+        detailViewController.heroID = heroIDString
+        
+        // Navego a los detalles
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
     
 }

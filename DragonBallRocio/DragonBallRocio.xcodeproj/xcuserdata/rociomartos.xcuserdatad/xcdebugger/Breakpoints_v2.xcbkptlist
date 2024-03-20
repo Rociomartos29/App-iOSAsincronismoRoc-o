@@ -20,5 +20,51 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8D2F62A-A5EA-423A-BC9C-40C983E2793F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallRocio/Presentations/Views/Heroes/HerosTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8D2F62A-A5EA-423A-BC9C-40C983E2793F - b20b68d8844399cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DragonBallRocio.HerosTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "DragonBallRocio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rociomartos/Desktop/KeepCoding/BC%20Mobile/Practicas/App-iOSAsincronismoRocio/DragonBallRocio/DragonBallRocio/Presentations/Views/Heroes/HerosTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80">
+               </Location>
+               <Location
+                  uuid = "E8D2F62A-A5EA-423A-BC9C-40C983E2793F - b20b68d884439835"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DragonBallRocio.HerosTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "DragonBallRocio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rociomartos/Desktop/KeepCoding/BC%20Mobile/Practicas/App-iOSAsincronismoRocio/DragonBallRocio/DragonBallRocio/Presentations/Views/Heroes/HerosTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
