@@ -12,6 +12,7 @@ import Combine
 class HerosTableViewController: UITableViewController {
     //TODO: viewModel, appState, heroes
     private var appState: LoginViewModel
+    @IBOutlet var mitableView: UITableView!
     private var viewModel: HerosViewModel
     
     //Combine
