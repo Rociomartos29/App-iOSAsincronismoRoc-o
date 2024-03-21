@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,34 @@
 		360CD4E22BAC7BC9007AFDE1 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4E12BAC7BC9007AFDE1 /* NetworkLogin.swift */; };
 		360CD4E42BAC7BD6007AFDE1 /* NetworkHeros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4E32BAC7BD6007AFDE1 /* NetworkHeros.swift */; };
 		360CD4E62BAC7BED007AFDE1 /* NetworkTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4E52BAC7BED007AFDE1 /* NetworkTransformation.swift */; };
+		360CD4E82BAC7DA5007AFDE1 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4E72BAC7DA5007AFDE1 /* EndPoints.swift */; };
+		360CD4EA2BAC7DB8007AFDE1 /* HTTPResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4E92BAC7DB8007AFDE1 /* HTTPResponseCodes.swift */; };
+		360CD4EC2BAC7DC6007AFDE1 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4EB2BAC7DC6007AFDE1 /* HTTPMethods.swift */; };
+		360CD4F32BAC7E89007AFDE1 /* LoginRepoitoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4F22BAC7E89007AFDE1 /* LoginRepoitoryProtocol.swift */; };
+		360CD4F52BAC7EAC007AFDE1 /* HeroRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4F42BAC7EAC007AFDE1 /* HeroRepositoryProtocol.swift */; };
+		360CD4F72BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4F62BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift */; };
+		360CD4F92BAC8065007AFDE1 /* TransformUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4F82BAC8065007AFDE1 /* TransformUseCase.swift */; };
+		360CD4FB2BAC8075007AFDE1 /* HeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4FA2BAC8075007AFDE1 /* HeroUseCase.swift */; };
+		360CD4FD2BAC8081007AFDE1 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4FC2BAC8081007AFDE1 /* LoginUseCase.swift */; };
+		360CD4FF2BAC80B9007AFDE1 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD4FE2BAC80B9007AFDE1 /* HeroModel.swift */; };
+		360CD5012BAC80C4007AFDE1 /* TransformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD5002BAC80C4007AFDE1 /* TransformModel.swift */; };
+		360CD5032BAC80F6007AFDE1 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD5022BAC80F6007AFDE1 /* UIImage+Extension.swift */; };
+		360CD5052BAC810F007AFDE1 /* ConstantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CD5042BAC810F007AFDE1 /* ConstantApp.swift */; };
+		36D744162BAC82CA002458C0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744152BAC82CA002458C0 /* AppState.swift */; };
+		36D744182BAC82DE002458C0 /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744172BAC82DE002458C0 /* HeroViewModel.swift */; };
+		36D7441A2BAC82EC002458C0 /* TransformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744192BAC82EC002458C0 /* TransformViewModel.swift */; };
+		36D744242BAC867C002458C0 /* HeroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744222BAC867C002458C0 /* HeroTableViewController.swift */; };
+		36D744252BAC867C002458C0 /* HeroTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D744232BAC867C002458C0 /* HeroTableViewController.xib */; };
+		36D744292BAC86CB002458C0 /* HerosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744272BAC86CB002458C0 /* HerosTableViewCell.swift */; };
+		36D7442A2BAC86CB002458C0 /* HerosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D744282BAC86CB002458C0 /* HerosTableViewCell.xib */; };
+		36D7442F2BAC8BFD002458C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D7442D2BAC8BFD002458C0 /* LoginViewController.swift */; };
+		36D744302BAC8BFD002458C0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D7442E2BAC8BFD002458C0 /* LoginViewController.xib */; };
+		36D744402BAC91E9002458C0 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 36D7443F2BAC91E9002458C0 /* CombineCocoa */; };
+		36D744432BAC9219002458C0 /* KcLibraryswift in Frameworks */ = {isa = PBXBuildFile; productRef = 36D744422BAC9219002458C0 /* KcLibraryswift */; };
+		36D744462BAC9669002458C0 /* TransformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744442BAC9669002458C0 /* TransformTableViewController.swift */; };
+		36D744472BAC9669002458C0 /* TransformTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D744452BAC9669002458C0 /* TransformTableViewController.xib */; };
+		36D7444B2BAC96D9002458C0 /* TransformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744492BAC96D9002458C0 /* TransformTableViewCell.swift */; };
+		36D7444C2BAC96D9002458C0 /* TransformTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D7444A2BAC96D9002458C0 /* TransformTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +87,32 @@
 		360CD4E12BAC7BC9007AFDE1 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
 		360CD4E32BAC7BD6007AFDE1 /* NetworkHeros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeros.swift; sourceTree = "<group>"; };
 		360CD4E52BAC7BED007AFDE1 /* NetworkTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTransformation.swift; sourceTree = "<group>"; };
+		360CD4E72BAC7DA5007AFDE1 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		360CD4E92BAC7DB8007AFDE1 /* HTTPResponseCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseCodes.swift; sourceTree = "<group>"; };
+		360CD4EB2BAC7DC6007AFDE1 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		360CD4F22BAC7E89007AFDE1 /* LoginRepoitoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepoitoryProtocol.swift; sourceTree = "<group>"; };
+		360CD4F42BAC7EAC007AFDE1 /* HeroRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepositoryProtocol.swift; sourceTree = "<group>"; };
+		360CD4F62BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformRepositoryProtocol.swift; sourceTree = "<group>"; };
+		360CD4F82BAC8065007AFDE1 /* TransformUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformUseCase.swift; sourceTree = "<group>"; };
+		360CD4FA2BAC8075007AFDE1 /* HeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroUseCase.swift; sourceTree = "<group>"; };
+		360CD4FC2BAC8081007AFDE1 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		360CD4FE2BAC80B9007AFDE1 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		360CD5002BAC80C4007AFDE1 /* TransformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformModel.swift; sourceTree = "<group>"; };
+		360CD5022BAC80F6007AFDE1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		360CD5042BAC810F007AFDE1 /* ConstantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantApp.swift; sourceTree = "<group>"; };
+		36D744152BAC82CA002458C0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		36D744172BAC82DE002458C0 /* HeroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewModel.swift; sourceTree = "<group>"; };
+		36D744192BAC82EC002458C0 /* TransformViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformViewModel.swift; sourceTree = "<group>"; };
+		36D744222BAC867C002458C0 /* HeroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewController.swift; sourceTree = "<group>"; };
+		36D744232BAC867C002458C0 /* HeroTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewController.xib; sourceTree = "<group>"; };
+		36D744272BAC86CB002458C0 /* HerosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosTableViewCell.swift; sourceTree = "<group>"; };
+		36D744282BAC86CB002458C0 /* HerosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerosTableViewCell.xib; sourceTree = "<group>"; };
+		36D7442D2BAC8BFD002458C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		36D7442E2BAC8BFD002458C0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		36D744442BAC9669002458C0 /* TransformTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTableViewController.swift; sourceTree = "<group>"; };
+		36D744452BAC9669002458C0 /* TransformTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformTableViewController.xib; sourceTree = "<group>"; };
+		36D744492BAC96D9002458C0 /* TransformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformTableViewCell.swift; sourceTree = "<group>"; };
+		36D7444A2BAC96D9002458C0 /* TransformTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +121,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				360CD4D32BAC7B02007AFDE1 /* KcLibraryswift in Frameworks */,
+				36D744402BAC91E9002458C0 /* CombineCocoa in Frameworks */,
+				36D744432BAC9219002458C0 /* KcLibraryswift in Frameworks */,
 				360CD4D02BAC7AEE007AFDE1 /* CombineCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +209,11 @@
 		360CD4D52BAC7B2F007AFDE1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				360CD4F12BAC7E65007AFDE1 /* Tools */,
+				360CD4F02BAC7E5D007AFDE1 /* Extension */,
+				360CD4EF2BAC7E55007AFDE1 /* Entities */,
+				360CD4EE2BAC7E4A007AFDE1 /* UseCase */,
+				360CD4ED2BAC7E3F007AFDE1 /* Protocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -160,6 +221,8 @@
 		360CD4D62BAC7B35007AFDE1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				36D744142BAC8277002458C0 /* ViewModels */,
+				36D744132BAC8271002458C0 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -195,8 +258,123 @@
 		360CD4E02BAC7BB5007AFDE1 /* BaseNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				360CD4E72BAC7DA5007AFDE1 /* EndPoints.swift */,
+				360CD4E92BAC7DB8007AFDE1 /* HTTPResponseCodes.swift */,
+				360CD4EB2BAC7DC6007AFDE1 /* HTTPMethods.swift */,
 			);
 			path = BaseNetwork;
+			sourceTree = "<group>";
+		};
+		360CD4ED2BAC7E3F007AFDE1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				360CD4F22BAC7E89007AFDE1 /* LoginRepoitoryProtocol.swift */,
+				360CD4F42BAC7EAC007AFDE1 /* HeroRepositoryProtocol.swift */,
+				360CD4F62BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		360CD4EE2BAC7E4A007AFDE1 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				360CD4F82BAC8065007AFDE1 /* TransformUseCase.swift */,
+				360CD4FA2BAC8075007AFDE1 /* HeroUseCase.swift */,
+				360CD4FC2BAC8081007AFDE1 /* LoginUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		360CD4EF2BAC7E55007AFDE1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				360CD4FE2BAC80B9007AFDE1 /* HeroModel.swift */,
+				360CD5002BAC80C4007AFDE1 /* TransformModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		360CD4F02BAC7E5D007AFDE1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				360CD5022BAC80F6007AFDE1 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		360CD4F12BAC7E65007AFDE1 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				360CD5042BAC810F007AFDE1 /* ConstantApp.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		36D744132BAC8271002458C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36D7441D2BAC8330002458C0 /* Transform */,
+				36D7441C2BAC8324002458C0 /* Heero */,
+				36D7441B2BAC831D002458C0 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36D744142BAC8277002458C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				36D744152BAC82CA002458C0 /* AppState.swift */,
+				36D744172BAC82DE002458C0 /* HeroViewModel.swift */,
+				36D744192BAC82EC002458C0 /* TransformViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		36D7441B2BAC831D002458C0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				36D7442D2BAC8BFD002458C0 /* LoginViewController.swift */,
+				36D7442E2BAC8BFD002458C0 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		36D7441C2BAC8324002458C0 /* Heero */ = {
+			isa = PBXGroup;
+			children = (
+				36D744262BAC86B4002458C0 /* Cell */,
+				36D744222BAC867C002458C0 /* HeroTableViewController.swift */,
+				36D744232BAC867C002458C0 /* HeroTableViewController.xib */,
+			);
+			path = Heero;
+			sourceTree = "<group>";
+		};
+		36D7441D2BAC8330002458C0 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				36D744482BAC96C4002458C0 /* Cell */,
+				36D744442BAC9669002458C0 /* TransformTableViewController.swift */,
+				36D744452BAC9669002458C0 /* TransformTableViewController.xib */,
+			);
+			path = Transform;
+			sourceTree = "<group>";
+		};
+		36D744262BAC86B4002458C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36D744272BAC86CB002458C0 /* HerosTableViewCell.swift */,
+				36D744282BAC86CB002458C0 /* HerosTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		36D744482BAC96C4002458C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36D744492BAC96D9002458C0 /* TransformTableViewCell.swift */,
+				36D7444A2BAC96D9002458C0 /* TransformTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +396,8 @@
 			packageProductDependencies = (
 				360CD4CF2BAC7AEE007AFDE1 /* CombineCocoa */,
 				360CD4D22BAC7B02007AFDE1 /* KcLibraryswift */,
+				36D7443F2BAC91E9002458C0 /* CombineCocoa */,
+				36D744422BAC9219002458C0 /* KcLibraryswift */,
 			);
 			productName = DragonBall;
 			productReference = 360CD49B2BAC7A19007AFDE1 /* DragonBall.app */;
@@ -292,8 +472,8 @@
 			);
 			mainGroup = 360CD4922BAC7A19007AFDE1;
 			packageReferences = (
-				360CD4CE2BAC7AEE007AFDE1 /* XCLocalSwiftPackageReference "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/CombineCocoa" */,
-				360CD4D12BAC7B02007AFDE1 /* XCLocalSwiftPackageReference "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/KcLibraryswift" */,
+				36D7443E2BAC91E9002458C0 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				36D744412BAC9219002458C0 /* XCRemoteSwiftPackageReference "KcLibraryswift" */,
 			);
 			productRefGroup = 360CD49C2BAC7A19007AFDE1 /* Products */;
 			projectDirPath = "";
@@ -311,7 +491,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D744302BAC8BFD002458C0 /* LoginViewController.xib in Resources */,
+				36D7442A2BAC86CB002458C0 /* HerosTableViewCell.xib in Resources */,
+				36D7444C2BAC96D9002458C0 /* TransformTableViewCell.xib in Resources */,
+				36D744472BAC9669002458C0 /* TransformTableViewController.xib in Resources */,
 				360CD4AB2BAC7A1B007AFDE1 /* LaunchScreen.storyboard in Resources */,
+				36D744252BAC867C002458C0 /* HeroTableViewController.xib in Resources */,
 				360CD4A82BAC7A1B007AFDE1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +522,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D744462BAC9669002458C0 /* TransformTableViewController.swift in Sources */,
+				36D7442F2BAC8BFD002458C0 /* LoginViewController.swift in Sources */,
 				360CD4E22BAC7BC9007AFDE1 /* NetworkLogin.swift in Sources */,
+				360CD4E82BAC7DA5007AFDE1 /* EndPoints.swift in Sources */,
+				360CD4FD2BAC8081007AFDE1 /* LoginUseCase.swift in Sources */,
+				36D7441A2BAC82EC002458C0 /* TransformViewModel.swift in Sources */,
+				36D744182BAC82DE002458C0 /* HeroViewModel.swift in Sources */,
+				360CD4F72BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift in Sources */,
+				360CD4FB2BAC8075007AFDE1 /* HeroUseCase.swift in Sources */,
 				360CD4DB2BAC7B6F007AFDE1 /* HeroRepository.swift in Sources */,
+				360CD4F92BAC8065007AFDE1 /* TransformUseCase.swift in Sources */,
+				360CD5032BAC80F6007AFDE1 /* UIImage+Extension.swift in Sources */,
 				360CD4DD2BAC7B81007AFDE1 /* LoginRepository.swift in Sources */,
 				360CD4E42BAC7BD6007AFDE1 /* NetworkHeros.swift in Sources */,
 				360CD4DF2BAC7B93007AFDE1 /* TransfofrmRepository.swift in Sources */,
+				360CD5052BAC810F007AFDE1 /* ConstantApp.swift in Sources */,
 				360CD49F2BAC7A19007AFDE1 /* AppDelegate.swift in Sources */,
+				360CD4F32BAC7E89007AFDE1 /* LoginRepoitoryProtocol.swift in Sources */,
+				360CD4EA2BAC7DB8007AFDE1 /* HTTPResponseCodes.swift in Sources */,
+				360CD4F52BAC7EAC007AFDE1 /* HeroRepositoryProtocol.swift in Sources */,
 				360CD4A12BAC7A19007AFDE1 /* SceneDelegate.swift in Sources */,
+				36D744162BAC82CA002458C0 /* AppState.swift in Sources */,
+				36D744242BAC867C002458C0 /* HeroTableViewController.swift in Sources */,
 				360CD4E62BAC7BED007AFDE1 /* NetworkTransformation.swift in Sources */,
+				36D7444B2BAC96D9002458C0 /* TransformTableViewCell.swift in Sources */,
+				360CD4EC2BAC7DC6007AFDE1 /* HTTPMethods.swift in Sources */,
+				360CD4FF2BAC80B9007AFDE1 /* HeroModel.swift in Sources */,
+				360CD5012BAC80C4007AFDE1 /* TransformModel.swift in Sources */,
+				36D744292BAC86CB002458C0 /* HerosTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,16 +888,24 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		360CD4CE2BAC7AEE007AFDE1 /* XCLocalSwiftPackageReference "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/CombineCocoa" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/CombineCocoa";
+/* Begin XCRemoteSwiftPackageReference section */
+		36D7443E2BAC91E9002458C0 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
 		};
-		360CD4D12BAC7B02007AFDE1 /* XCLocalSwiftPackageReference "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/KcLibraryswift" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../../../../Library/Developer/Xcode/DerivedData/DragonBallRocio-fpxpbowhthabnbfvbluwecobxokf/SourcePackages/checkouts/KcLibraryswift";
+		36D744412BAC9219002458C0 /* XCRemoteSwiftPackageReference "KcLibraryswift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joselbe1976/KcLibraryswift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		360CD4CF2BAC7AEE007AFDE1 /* CombineCocoa */ = {
@@ -700,6 +914,16 @@
 		};
 		360CD4D22BAC7B02007AFDE1 /* KcLibraryswift */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = KcLibraryswift;
+		};
+		36D7443F2BAC91E9002458C0 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36D7443E2BAC91E9002458C0 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		36D744422BAC9219002458C0 /* KcLibraryswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36D744412BAC9219002458C0 /* XCRemoteSwiftPackageReference "KcLibraryswift" */;
 			productName = KcLibraryswift;
 		};
 /* End XCSwiftPackageProductDependency section */

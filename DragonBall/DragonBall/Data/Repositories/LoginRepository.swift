@@ -5,22 +5,26 @@
 //  Created by Rocio Martos on 21/3/24.
 //
 
+
+
 import Foundation
 
-// Caso Real
 
-final class LoginRepository: LoginRepositoryProtocol{
-
-    private var netWork: NetworkLoginProtocol
+//Real
+final class DefaultLoginRespository: LoginRespositoryProtocol {
+    private var Network: NetworkLoginProtocol
     
-    init(netWork: NetworkLoginProtocol) {
-        self.netWork = netWork
+    init(Network: NetworkLoginProtocol) {
+        self.Network = Network
     }
+  
     func loginApp(user: String, password: String) async -> String {
-        return await netWork.loginApp(user: user, password: password)
+        return await Network.loginApp(user: user, password: password)
     }
 }
-final class LoginRespositoryFake: LoginRepositoryProtocol {
+
+//Fake
+final class DefaultLoginRespositoryFake: LoginRespositoryProtocol {
     private var Network: NetworkLoginProtocol
     
     init(Network: NetworkLoginProtocol = NetworkLoginFake()) {

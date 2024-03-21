@@ -6,19 +6,54 @@
 //
 
 import UIKit
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var appState : LoginViewModel = LoginViewModel(loginUseCase: LoginUseCase()) //Aqui el view model global
+    var cancelable : AnyCancellable?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        self.window = UIWindow(windowScene: windowScene)
+        
+        //evaluar si se puede hacer auto-login
+        appState.validateControlLogin()
+        
+        //creamo un navigatop controller
+        var nav: UINavigationController?
+        
+        //la caja de estados o viewRouter
+        self.cancelable = appState.$statusLogin
+            .sink(receiveValue: { estado in
+                switch estado {
+                case .notValidate, .none:
+                    //ver el login
+                    DispatchQueue.main.async {
+                        print("vamos pal login")
+                        nav = UINavigationController(rootViewController: LoginViewController(appState: self.appState))
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
+                case .success:
+                    //la home
+                    DispatchQueue.main.async {
+                        print("vamos pal home")
+                        nav = UINavigationController(rootViewController: HerosTableViewController(appState: self.appState, viewModel: HerosViewModel()))
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
+                case .error:
+                    //error
+                    DispatchQueue.main.async {
+                        print("vamos pal error")
+                        self.window!.makeKeyAndVisible()
+                    }
+                }
+            })
     }
-
+                  
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

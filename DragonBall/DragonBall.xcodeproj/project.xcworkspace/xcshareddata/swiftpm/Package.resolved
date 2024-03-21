@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "combinecocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CombineCommunity/CombineCocoa.git",
+      "state" : {
+        "revision" : "7300c75ff9e072aa7fd0fccefcc88f74aae9bf56",
+        "version" : "0.4.1"
+      }
+    },
+    {
+      "identity" : "kclibraryswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joselbe1976/KcLibraryswift.git",
+      "state" : {
+        "revision" : "71bb64d1159f831382efe28ce0f7c2ce899fa8a6",
+        "version" : "0.0.2"
+      }
+    },
+    {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/evgenyneu/keychain-swift.git",

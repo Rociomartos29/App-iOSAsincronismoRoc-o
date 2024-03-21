@@ -4,9 +4,7 @@
 //
 //  Created by Rocio Martos on 21/3/24.
 //
-
 import Foundation
-
 
 protocol NetworkLoginProtocol {
     func loginApp(user: String, password: String) async -> String
