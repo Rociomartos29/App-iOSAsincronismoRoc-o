@@ -6,34 +6,35 @@
 //
 
 import Foundation
-
+import Combine
 protocol TransformationsUseCaseProtocol {
     var repo: TransformationsRepositoryProtocol { get set }
-    func getTransformations(filter: UUID?) async -> [Transformacione]
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione]
 }
 
-// Caso Real
+// Implementación real del caso de uso
 final class TransformationsUseCase: TransformationsUseCaseProtocol {
-    func getTransformations(filter: UUID?) async -> [Transformacione] {
-        await repo.getTransformation(filter: filter)
-    }
-    
     var repo: TransformationsRepositoryProtocol
     
-    init(repo: TransformationsRepositoryProtocol = TransformationsRepository(network: NetworkTransformations())) {
+    init(repo: TransformationsRepositoryProtocol = TransformationsRepository()) {
         self.repo = repo
+    }
+    
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+        return try await repo.getTransformations(forHeroWithID: id)
     }
 }
 
-// Fake
+// Implementación falsa del caso de uso (para pruebas, por ejemplo)
 final class TransformationsUseCaseFake: TransformationsUseCaseProtocol {
     var repo: TransformationsRepositoryProtocol
     
-    init(repo: TransformationsRepositoryProtocol = TransformationsRepository(network: NetworkTransformations())) {
+    init(repo: TransformationsRepositoryProtocol = TransformationsRepositoryFake()) {
         self.repo = repo
     }
-
-    func getTransformations(filter: UUID?) async -> [Transformacione] {
-        await repo.getTransformation(filter: filter)
+    
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+        return try await repo.getTransformations(forHeroWithID: id)
     }
 }
+

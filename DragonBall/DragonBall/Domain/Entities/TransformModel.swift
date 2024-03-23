@@ -9,9 +9,10 @@ import Foundation
 struct Transformacione: Codable{
     var id: UUID?
     var name: String
-    var descrption: String
+    var description: String
     var photo:String
 }
+
 struct TransformationModelRequest: Codable {
     let id: UUID
 }

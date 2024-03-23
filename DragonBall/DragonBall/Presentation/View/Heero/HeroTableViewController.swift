@@ -80,11 +80,12 @@ class HerosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Obtener el héroe seleccionado
         let selectedHero = viewModel.herosData[indexPath.row]
+        print(selectedHero)
         
         // Crear el ViewModel para las transformaciones del héroe seleccionado
-        let transformationsViewModel = TransformationsViewModel(hero: selectedHero)
+        let transformationsViewModel = TransformationsViewModel(useCase: TransformationsUseCase(), hero: selectedHero)
         
-        // Crear e inicializar el controlador de vista de la lista de transformaciones con el ViewModel creado
+        // Crear el controlador de vista de la lista de transformaciones con el ViewModel creado
         let transformationsViewController = TransformationsTableViewController(viewModel: transformationsViewModel)
         
         // Presentar el controlador de vista de la lista de transformaciones

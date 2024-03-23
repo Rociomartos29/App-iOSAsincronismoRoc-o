@@ -8,8 +8,8 @@
 import Foundation
 // Real
 final class TransformationsRepository: TransformationsRepositoryProtocol {
-    func getTransformation(filter: UUID?) async -> [Transformacione] {
-        await network.getTransformations(filter: filter!)
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+        await network.getTransformations(forHeroWithID: id)
     }
     
     private var network: NetworkTransformationsProtocol
@@ -21,13 +21,13 @@ final class TransformationsRepository: TransformationsRepositoryProtocol {
 
 // Fake
 final class TransformationsRepositoryFake: TransformationsRepositoryProtocol {
-    func getTransformation(filter: UUID?) async -> [Transformacione] {
-        await network.getTransformations(filter: filter!)
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+        await network.getTransformations(forHeroWithID: id)
     }
     
     private var network: NetworkTransformationsProtocol
     
-    init(network: NetworkTransformationsProtocol = NetworkTransfotmationsFake()) {
+    init(network: NetworkTransformationsProtocol = NetworkTransformationsFake()) {
         self.network = network
     }
 }

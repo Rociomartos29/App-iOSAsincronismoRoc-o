@@ -9,21 +9,29 @@ import Foundation
 import Combine
 
 final class TransformationsViewModel: ObservableObject {
-    @Published var transformations = [Transformacione]()
+    @Published var transform = [Transformacione]()
+    var hero: HerosModel
     
-    private var useCase: TransformationsUseCaseProtocol
-    private var cancellables = Set<AnyCancellable>()
+    private var useCase: TransformationsUseCase
     
-    init(useCase: TransformationsUseCaseProtocol = TransformationsUseCase()) {
-        self.useCase = useCase
+    init(useCase: TransformationsUseCaseProtocol = TransformationsUseCase(), hero:HerosModel) {
+        self.useCase = useCase as! TransformationsUseCase
+        self.hero = hero
+        Task{
+            await getTransform(id: hero.id)
+        }
+        
     }
     
-    func loadTransformations() {
-        
-        let data = await useCase.getTransformations(filter: "")
-        
-        DispatchQueue.main.async{
-            self.herosData = data
+    func getTransform(id: UUID) async {
+        do {
+            let data = try await useCase.getTransformations(forHeroWithID: id)
+            DispatchQueue.main.async {
+                self.transform = data
+            }
+        } catch {
+            // Manejar el error aquí, por ejemplo, imprimirlo en la consola
+            print("Error fetching transformations: \(error)")
         }
     }
 }
