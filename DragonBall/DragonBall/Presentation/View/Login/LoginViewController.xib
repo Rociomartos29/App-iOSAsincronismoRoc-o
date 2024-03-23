@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DragonBall" customModuleProvider="target">
+            <connections>
+                <outlet property="Contraseña" destination="rPK-rA-8rg" id="rmH-DP-fAo"/>
+                <outlet property="email" destination="bib-31-kIr" id="Syc-91-9zt"/>
+                <outlet property="loginButton" destination="tJ7-ne-DxH" id="caf-12-8PY"/>
+                <outlet property="titulo" destination="0KF-ll-tXs" id="maT-TZ-U6K"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="fono" destination="zgr-Sk-GEx" collectionClass="NSMutableArray" id="XJv-cg-OfJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1" translatesAutoresizingMaskIntoConstraints="NO" id="zgr-Sk-GEx">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bib-31-kIr">
+                    <rect key="frame" x="24" y="568" width="353" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="353" id="l4R-aK-KTi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-rA-8rg">
+                    <rect key="frame" x="24" y="629" width="353" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ7-ne-DxH">
+                    <rect key="frame" x="24" y="693" width="353" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Entrar">
+                        <backgroundConfiguration key="background" cornerRadius="20"/>
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                        <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                    </buttonConfiguration>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragon Ball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KF-ll-tXs">
+                    <rect key="frame" x="24" y="67" width="353" height="153"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="153" id="cOF-R5-c5w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="40"/>
+                    <color key="textColor" systemColor="systemYellowColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bib-31-kIr" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="5pv-Wg-nGN"/>
+                <constraint firstItem="zgr-Sk-GEx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6hz-QI-mAy"/>
+                <constraint firstItem="tJ7-ne-DxH" firstAttribute="top" secondItem="rPK-rA-8rg" secondAttribute="bottom" constant="30" id="Nlk-59-m59"/>
+                <constraint firstItem="rPK-rA-8rg" firstAttribute="top" secondItem="bib-31-kIr" secondAttribute="bottom" constant="27" id="R1r-4e-AD8"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="leading" secondItem="rPK-rA-8rg" secondAttribute="leading" id="Rhq-gS-pdu"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="trailing" secondItem="tJ7-ne-DxH" secondAttribute="trailing" id="Wj7-MT-Alj"/>
+                <constraint firstAttribute="bottom" secondItem="bib-31-kIr" secondAttribute="bottom" constant="250" id="X6Y-VJ-hgf"/>
+                <constraint firstItem="zgr-Sk-GEx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X8y-wT-dIA"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="leading" secondItem="tJ7-ne-DxH" secondAttribute="leading" id="ZLl-Cb-Lqw"/>
+                <constraint firstItem="0KF-ll-tXs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="67" id="k0v-rT-oHB"/>
+                <constraint firstAttribute="trailing" secondItem="zgr-Sk-GEx" secondAttribute="trailing" id="pnV-ss-XLk"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="leading" secondItem="0KF-ll-tXs" secondAttribute="leading" id="qph-GR-TRY"/>
+                <constraint firstAttribute="bottom" secondItem="zgr-Sk-GEx" secondAttribute="bottom" id="sNl-Fj-OB5"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="trailing" secondItem="rPK-rA-8rg" secondAttribute="trailing" id="uWe-Ht-fWe"/>
+                <constraint firstItem="bib-31-kIr" firstAttribute="trailing" secondItem="0KF-ll-tXs" secondAttribute="trailing" id="woK-Qi-wA7"/>
+            </constraints>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fondo1" width="1080" height="1920"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
