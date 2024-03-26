@@ -39,7 +39,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindingUI()
-       
+        
+        
+    }
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     
@@ -54,44 +61,48 @@ class LoginViewController: UIViewController {
                     }
                 }
                 .store(in: &suscriptor)
-                }
+        }
         if let passwordTxt = self.Contraseña{
             passwordTxt.textPublisher
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] data in
                     if let pass = data{
-                       
+                        
                         self?.password = pass
                     }
                 }
                 .store(in: &suscriptor)
         }
         
-        if let loginButon = self.loginButton{
-            loginButon.tapPublisher
+        if let loginButton = self.loginButton {
+            loginButton.tapPublisher
                 .sink { [weak self] _ in
-                    if let user = self?.user,
-                       let pass = self?.password{
-                        self?.viewModel?.loginApp(user: user, pass: pass)
+                    guard let email = self?.email.text, !email.isEmpty,
+                          let password = self?.Contraseña.text, !password.isEmpty else {
+                        self?.showAlert(message: "Correo electrónico o contraseña incorrecto.")
+                        return
                     }
+                    self?.viewModel?.loginApp(user: email, pass: password)
                 }
                 .store(in: &suscriptor)
         }
-        
-        }
-    
-
-    @IBAction func entrarButton(_ sender: Any) {
-        print("Botón de entrar presionado")
-           guard let viewModel = viewModel else {
-               print("Error: ViewModel no inicializado")
-               return
-           }
-           
-           // Aquí deberías llamar al método para iniciar sesión
-           viewModel.loginApp(user: user, pass: password)
-       
     }
     
-
+    
+    
+    
+    @IBAction func entrarButton(_ sender: Any) {
+        print("Botón de entrar presionado")
+        guard let viewModel = viewModel else {
+            print("Error: ViewModel no inicializado")
+            return
+        }
+        
+        // Aquí deberías llamar al método para iniciar sesión
+        viewModel.loginApp(user: user, pass: password)
+        
+    }
+    
+    
 }
+

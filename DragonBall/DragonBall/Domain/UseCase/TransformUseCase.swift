@@ -9,7 +9,7 @@ import Foundation
 import Combine
 protocol TransformationsUseCaseProtocol {
     var repo: TransformationsRepositoryProtocol { get set }
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione]
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation]
 }
 
 // Implementación real del caso de uso
@@ -20,7 +20,7 @@ final class TransformationsUseCase: TransformationsUseCaseProtocol {
         self.repo = repo
     }
     
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation] {
         return try await repo.getTransformations(forHeroWithID: id)
     }
 }
@@ -33,7 +33,7 @@ final class TransformationsUseCaseFake: TransformationsUseCaseProtocol {
         self.repo = repo
     }
     
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation] {
         return try await repo.getTransformations(forHeroWithID: id)
     }
 }

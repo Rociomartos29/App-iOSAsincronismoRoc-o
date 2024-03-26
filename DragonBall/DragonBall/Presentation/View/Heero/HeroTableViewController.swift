@@ -76,27 +76,29 @@ class HerosTableViewController: UITableViewController {
         return 130
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Obtener el héroe seleccionado
-        let selectedHero = viewModel.herosData[indexPath.row]
-        
-        // Crear el ViewModel para las transformaciones del héroe seleccionado
-        let transformationsViewModel = TransformationsViewModel(useCases: TransformationsUseCase(), hero: selectedHero)
-        
-        // Verificar si el héroe tiene transformaciones
-        Task {
-            await transformationsViewModel.getTransform(id: selectedHero.id)
-            DispatchQueue.main.async {
-                if transformationsViewModel.transform.isEmpty {
-                    // Si no hay transformaciones, mostrar una alerta
-                    self.showAlert(message: "Este héroe no tiene transformaciones.")
-                } else {
-                    // Si hay transformaciones, crear y presentar el controlador de vista de la lista de transformaciones
-                    let transformationsViewController = TransformationsTableViewController(viewModel: transformationsViewModel)
-                    self.navigationController?.pushViewController(transformationsViewController, animated: true)
+            // Obtener el héroe seleccionado
+            let selectedHero = viewModel.herosData[indexPath.row]
+            
+            // Cargar las transformaciones del héroe utilizando el ViewModel
+            Task {
+                do {
+                    let transformations = try await viewModel.loadTransformations(for: selectedHero)
+                    DispatchQueue.main.async {
+                        if transformations.isEmpty {
+                            // Si no hay transformaciones, mostrar una alerta
+                            self.showAlert(message: "Este héroe no tiene transformaciones.")
+                        } else {
+                            // Si hay transformaciones, crear y presentar el controlador de vista de la lista de transformaciones
+                            let transformationsViewController = TransformationsTableViewController(transformations: transformations)
+                            self.navigationController?.pushViewController(transformationsViewController, animated: true)
+                        }
+                    }
+                } catch {
+                    print("Error al obtener las transformaciones: \(error)")
                 }
             }
         }
-    }
+    
         
     
     func showAlert(message: String) {

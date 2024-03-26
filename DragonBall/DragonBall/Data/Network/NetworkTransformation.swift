@@ -8,12 +8,12 @@
 import Foundation
 import KcLibraryswift
 protocol NetworkTransformationsProtocol {
-    func getTransformations(forHeroWithID id: UUID) async -> [Transformacione]
+    func getTransformations(forHeroWithID id: UUID) async -> [Transformation]
 }
 
 final class NetworkTransformations: NetworkTransformationsProtocol {
-    func getTransformations(forHeroWithID id: UUID) async -> [Transformacione] {
-        var transformations = [Transformacione]()
+    func getTransformations(forHeroWithID id: UUID) async -> [Transformation] {
+        var transformations = [Transformation]()
             
          // Construye la URL para la solicitud
          guard let url = URL(string: "\(ConstantApp.CONST_API_URL)\(Endpoints.transformation.rawValue)") else {
@@ -43,7 +43,7 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
              if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == HTTPResponseCodes.SUCESS {
                  print("Received response with status code:", httpResponse.statusCode)
                  // Decodifica los datos en un array de objetos Transformation
-                 transformations = try JSONDecoder().decode([Transformacione].self, from: data)
+                 transformations = try JSONDecoder().decode([Transformation].self, from: data)
              }
          } catch {
              // Maneja los errores
@@ -55,8 +55,8 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
 }
 
 final class NetworkTransformationsFake: NetworkTransformationsProtocol {
-    func getTransformations(forHeroWithID id: UUID) async -> [Transformacione] {
-        let model1 = Transformacione(id: UUID(), name: "1. Oozaru – Gran Mono", description: "Cómo todos los Saiyans con cola, Goku es capaz de convertirse en un mono gigante si mira fijamente a la luna llena. Así es como Goku cuando era un infante liberaba todo su potencial a cambio de perder todo el raciocinio y transformarse en una auténtica bestia. Es por ello que sus amigos optan por cortarle la cola para que no ocurran desgracias, ya que Goku mató a su propio abuelo adoptivo Son Gohan estando en este estado. Después de beber el Agua Ultra Divina, Goku liberó todo su potencial sin necesidad de volver a convertirse en Oozaru", photo: "https://areajugones.sport.es/wp-content/uploads/2021/05/ozarru.jpg.webp")
+    func getTransformations(forHeroWithID id: UUID) async -> [Transformation] {
+        let model1 = Transformation(id: UUID(), name: "1. Oozaru – Gran Mono", description: "Cómo todos los Saiyans con cola, Goku es capaz de convertirse en un mono gigante si mira fijamente a la luna llena. Así es como Goku cuando era un infante liberaba todo su potencial a cambio de perder todo el raciocinio y transformarse en una auténtica bestia. Es por ello que sus amigos optan por cortarle la cola para que no ocurran desgracias, ya que Goku mató a su propio abuelo adoptivo Son Gohan estando en este estado. Después de beber el Agua Ultra Divina, Goku liberó todo su potencial sin necesidad de volver a convertirse en Oozaru", photo: "https://areajugones.sport.es/wp-content/uploads/2021/05/ozarru.jpg.webp")
         return [model1]
     }
 }

@@ -40,16 +40,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     //la home
                     DispatchQueue.main.async {
                         print("vamos pal home")
-                        nav = UINavigationController(rootViewController: HerosTableViewController(appState: self.appState, viewModel: HerosViewModel()))
+                        nav = UINavigationController(rootViewController: HerosTableViewController(appState: self.appState, viewModel: HerosViewModel(useCaseHeros: HerosUseCase(), useCaseTransformations: TransformationsUseCase())))
                         self.window!.rootViewController = nav
                         self.window!.makeKeyAndVisible()
                     }
                 case .error:
                     //error
                     DispatchQueue.main.async {
-                        print("vamos pal error")
-                        self.window!.makeKeyAndVisible()
-                    }
+                            if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
+                                let alertController = UIAlertController(title: "Error", message: "Correo electrónico o contraseña incorrecto.", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(okAction)
+                                rootViewController.present(alertController, animated: true, completion: nil)
+                            }
+                        }
                 }
             })
     }

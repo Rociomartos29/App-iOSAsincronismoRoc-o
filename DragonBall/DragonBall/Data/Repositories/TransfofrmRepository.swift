@@ -8,7 +8,7 @@
 import Foundation
 // Real
 final class TransformationsRepository: TransformationsRepositoryProtocol {
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation] {
         await network.getTransformations(forHeroWithID: id)
     }
     
@@ -21,7 +21,7 @@ final class TransformationsRepository: TransformationsRepositoryProtocol {
 
 // Fake
 final class TransformationsRepositoryFake: TransformationsRepositoryProtocol {
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione] {
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation] {
         await network.getTransformations(forHeroWithID: id)
     }
     

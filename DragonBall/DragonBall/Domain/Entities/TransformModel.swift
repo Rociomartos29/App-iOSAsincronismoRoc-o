@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Transformacione: Codable{
+struct Transformation: Codable{
     var id: UUID?
     var name: String
     var description: String

@@ -7,5 +7,5 @@
 
 import Foundation
 protocol TransformationsRepositoryProtocol {
-    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformacione]
+    func getTransformations(forHeroWithID id: UUID) async throws -> [Transformation]
 }

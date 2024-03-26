@@ -36,7 +36,6 @@
 		36874E8B2BAF438C005B59A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36874E8D2BAF438C005B59A6 /* Localizable.strings */; };
 		36D744162BAC82CA002458C0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744152BAC82CA002458C0 /* AppState.swift */; };
 		36D744182BAC82DE002458C0 /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744172BAC82DE002458C0 /* HeroViewModel.swift */; };
-		36D7441A2BAC82EC002458C0 /* TransformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744192BAC82EC002458C0 /* TransformViewModel.swift */; };
 		36D744242BAC867C002458C0 /* HeroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744222BAC867C002458C0 /* HeroTableViewController.swift */; };
 		36D744252BAC867C002458C0 /* HeroTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D744232BAC867C002458C0 /* HeroTableViewController.xib */; };
 		36D744292BAC86CB002458C0 /* HerosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D744272BAC86CB002458C0 /* HerosTableViewCell.swift */; };
@@ -90,9 +89,9 @@
 		360CD5022BAC80F6007AFDE1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		360CD5042BAC810F007AFDE1 /* ConstantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantApp.swift; sourceTree = "<group>"; };
 		36874E8C2BAF438C005B59A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		36874E8E2BB35799005B59A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36D744152BAC82CA002458C0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		36D744172BAC82DE002458C0 /* HeroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewModel.swift; sourceTree = "<group>"; };
-		36D744192BAC82EC002458C0 /* TransformViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformViewModel.swift; sourceTree = "<group>"; };
 		36D744222BAC867C002458C0 /* HeroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewController.swift; sourceTree = "<group>"; };
 		36D744232BAC867C002458C0 /* HeroTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewController.xib; sourceTree = "<group>"; };
 		36D744272BAC86CB002458C0 /* HerosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosTableViewCell.swift; sourceTree = "<group>"; };
@@ -298,7 +297,6 @@
 			children = (
 				36D744152BAC82CA002458C0 /* AppState.swift */,
 				36D744172BAC82DE002458C0 /* HeroViewModel.swift */,
-				36D744192BAC82EC002458C0 /* TransformViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -420,6 +418,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 360CD4922BAC7A19007AFDE1;
 			packageReferences = (
@@ -471,7 +470,6 @@
 				360CD4E22BAC7BC9007AFDE1 /* NetworkLogin.swift in Sources */,
 				360CD4E82BAC7DA5007AFDE1 /* EndPoints.swift in Sources */,
 				360CD4FD2BAC8081007AFDE1 /* LoginUseCase.swift in Sources */,
-				36D7441A2BAC82EC002458C0 /* TransformViewModel.swift in Sources */,
 				36D744182BAC82DE002458C0 /* HeroViewModel.swift in Sources */,
 				360CD4F72BAC7EC8007AFDE1 /* TransformRepositoryProtocol.swift in Sources */,
 				360CD4FB2BAC8075007AFDE1 /* HeroUseCase.swift in Sources */,
@@ -529,6 +527,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				36874E8C2BAF438C005B59A6 /* en */,
+				36874E8E2BB35799005B59A6 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -541,6 +540,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -604,6 +604,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
