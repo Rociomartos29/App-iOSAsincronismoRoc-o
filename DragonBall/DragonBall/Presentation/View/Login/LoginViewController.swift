@@ -92,13 +92,11 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func entrarButton(_ sender: Any) {
-        print("Botón de entrar presionado")
         guard let viewModel = viewModel else {
             print("Error: ViewModel no inicializado")
             return
         }
-        
-        // Aquí deberías llamar al método para iniciar sesión
+
         viewModel.loginApp(user: user, pass: password)
         
     }

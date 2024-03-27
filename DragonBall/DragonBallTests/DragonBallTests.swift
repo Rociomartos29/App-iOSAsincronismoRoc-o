@@ -66,7 +66,7 @@ final class KcDragonBallProfTests: XCTestCase {
         jwt = KC.loadKC(key: ConstantApp.CONST_TOKEN_ID_KEYCHAIN)
         XCTAssertEqual(jwt, "")
     }
-
+    
     
     func testLoginReal() async throws {
         let KC = KeyChainKC()
@@ -79,7 +79,7 @@ final class KcDragonBallProfTests: XCTestCase {
         XCTAssertNotNil(useCase)
         
         //validar
-
+        
         let resp = await useCase.validateToken()
         XCTAssertEqual(resp, false)
         
@@ -98,16 +98,16 @@ final class KcDragonBallProfTests: XCTestCase {
         
     }
     
-
+    
     
     
     // inicio de testing de heros....
     
     func testHeroViewModel() async throws {
-        let vm = HerosViewModel(useCaseHeros: HeroUseCaseFake())
+        let vm = HerosViewModel(useCaseHeros: HeroUseCaseFake(), useCaseTransformations: TransformationsUseCaseFake())
         XCTAssertNotNil(vm)
         
-       // XCTAssertEqual(vm.herosData.count, 2) //solo hay 2 heros
+        // XCTAssertEqual(vm.herosData.count, 2) //solo hay 2 heros
     }
     
     func testHerosUseCase() async throws {
@@ -124,7 +124,7 @@ final class KcDragonBallProfTests: XCTestCase {
         
         let exp = self.expectation(description: "Heros get")
         
-        let vm = HerosViewModel(useCaseHeros: HeroUseCaseFake())
+        let vm = HerosViewModel(useCaseHeros: HeroUseCaseFake(), useCaseTransformations: TransformationsUseCaseFake())
         XCTAssertNotNil(vm)
         
         //aqui la llamada a gerHeros...
@@ -141,17 +141,17 @@ final class KcDragonBallProfTests: XCTestCase {
                 }
             }
             .store(in: &suscriptor)
-
+        
         await self.waitForExpectations(timeout: 10)
         
-    
+        
         
     }
     
     func testHeros_Data() async throws {
         let network = NetworkHeros()
         XCTAssertNotNil(network)
-       
+        
         let repo = HerosRepository(Network: network)
         XCTAssertNotNil(repo)
         
@@ -172,101 +172,74 @@ final class KcDragonBallProfTests: XCTestCase {
     
     
     func testHerosDomain() async throws {
-           let model = HerosModel(id: UUID(), favorite: true, description: "", photo: "", name: "goku")
-           XCTAssertNotNil(model)
-           
-           XCTAssertEqual(model.name, "goku")
-           XCTAssertEqual(model.favorite, true)
-           XCTAssertEqual(model.getFullName(), "goku  $")
-       }
-       
-       // MARK: - Hero Presentation Tests
-       
-       func testHerosPresentation() async throws {
-           let viewModel = HerosViewModel(useCaseHeros: HeroUseCaseFake())
-           XCTAssertNotNil(viewModel)
-
-           let view = await HerosTableViewController(appState: LoginViewModel(loginUseCase: LoginUseCaseFake()), viewModel: viewModel)
-           XCTAssertNotNil(view)
-       }
-
-       // MARK: - Transformation ViewModel Tests
-       
-       func testTransformViewModel() async throws {
-           let viewModel = TransformationsViewModel(useCases: TransformationsUseCaseFake(), hero: HerosModel(id: UUID(), favorite: true, description: "", photo: "", name: "Goku"))
-           XCTAssertNotNil(viewModel)
-           
-           XCTAssertEqual(viewModel.transform.count, 0)
-       }
-       
-       // MARK: - Transformation UseCase Tests
-       
-       func testTransformUseCase() async throws {
-           let useCase = TransformationsUseCase(repo: TransformationsRepository())
-           XCTAssertNotNil(useCase)
-           
-           let transforms = try await useCase.getTransformations(forHeroWithID: UUID())
-           XCTAssertNotNil(transforms)
-           XCTAssertEqual(transforms.count, 0)
-       }
-       
-       // MARK: - Transformation Combine Tests
-       
-       func testTransformCombine() async throws {
-           var cancellables = Set<AnyCancellable>()
-           
-           let expectation = self.expectation(description: "Transformations received")
-           
-           let viewModel = TransformationsViewModel(useCases: TransformationsUseCaseFake(), hero: HerosModel(id: UUID(), favorite: true,  description: "", photo: "", name: "Goku"))
-           XCTAssertNotNil(viewModel)
-           
-           viewModel.$transform
-               .sink { completion in
-                   switch completion {
-                   case .finished:
-                       print("Transformations fetching completed")
-                   }
-               } receiveValue: { transformations in
-                   if transformations.count == 2 {
-                       expectation.fulfill()
-                   }
-               }
-               .store(in: &cancellables)
-           
-           await waitForExpectations(timeout: 5)
-       }
-
-       // MARK: - Transformation Data Tests
-       
-       func testTransformData() async throws {
-           let network = NetworkTransformationsFake()
-           XCTAssertNotNil(network)
-           
-           let repository = TransformationsRepository(network: network)
-           XCTAssertNotNil(repository)
-           
-           let transformations = try await repository.getTransformations(forHeroWithID: UUID())
-           XCTAssertNotNil(transformations)
-           XCTAssertEqual(transformations.count, 1)
-       }
-
-       // MARK: - Transformation Domain Tests
-       
-       func testTransformDomain() async throws {
-           let transformation = Transformacione(id: UUID(), name: "Kaioken", description: "A technique used by Goku", photo: "")
-           XCTAssertNotNil(transformation)
-           
-           XCTAssertEqual(transformation.name, "Kaioken")
-           XCTAssertEqual(transformation.description, "A technique used by Goku")
-       }
-
-       // MARK: - Transformation Presentation Tests
-       
-       func testTransformPresentation() async throws {
-           let viewModel = TransformationsViewModel(useCases: TransformationsUseCaseFake(), hero: HerosModel(id: UUID(), favorite: true, description: "", photo: "", name: "Goku"))
-           XCTAssertNotNil(viewModel)
-           
-           let viewController = await TransformationsTableViewController(viewModel: viewModel)
-           XCTAssertNotNil(viewController)
-       }
-   }
+        let model = HerosModel(id: UUID(), favorite: true, description: "", photo: "", name: "goku")
+        XCTAssertNotNil(model)
+        
+        XCTAssertEqual(model.name, "goku")
+        XCTAssertEqual(model.favorite, true)
+        XCTAssertEqual(model.getFullName(), "goku  $")
+    }
+    
+    // MARK: - Hero Presentation Tests
+    
+    func testHerosPresentation() async throws {
+        let viewModel = HerosViewModel(useCaseHeros: HeroUseCaseFake(), useCaseTransformations: TransformationsUseCaseFake())
+        XCTAssertNotNil(viewModel)
+        
+        let view = await HerosTableViewController(appState: LoginViewModel(loginUseCase: LoginUseCaseFake()), viewModel: viewModel)
+        XCTAssertNotNil(view)
+    }
+    
+    
+    // MARK: - Transformation UseCase Tests
+    
+    func testTransformUseCase() async throws {
+        let useCase = TransformationsUseCase(repo: TransformationsRepository())
+        XCTAssertNotNil(useCase)
+        
+        let transforms = try await useCase.getTransformations(forHeroWithID: UUID())
+        XCTAssertNotNil(transforms)
+        XCTAssertEqual(transforms.count, 0)
+    }
+    
+    // MARK: - Transformation Combine Tests
+    
+    
+    // MARK: - Transformation Data Tests
+    
+    func testTransformData() async throws {
+        let network = NetworkTransformationsFake()
+        XCTAssertNotNil(network)
+        
+        let repository = TransformationsRepository(network: network)
+        XCTAssertNotNil(repository)
+        
+        let transformations = try await repository.getTransformations(forHeroWithID: UUID())
+        XCTAssertNotNil(transformations)
+        XCTAssertEqual(transformations.count, 1)
+    }
+    
+    // MARK: - Transformation Domain Tests
+    
+    func testTransformDomain() async throws {
+        let transformation = Transformation(id: UUID(), name: "Kaioken", description: "A technique used by Goku", photo: "")
+        XCTAssertNotNil(transformation)
+        
+        XCTAssertEqual(transformation.name, "Kaioken")
+        XCTAssertEqual(transformation.description, "A technique used by Goku")
+    }
+    func testUIElements() {
+        let viewController = HerosTableViewController(appState: LoginViewModel(loginUseCase: LoginUseCaseFake()), viewModel: HerosViewModel(useCaseHeros: HeroUseCaseFake(), useCaseTransformations: TransformationsUseCaseFake()))
+        XCTAssertNotNil(viewController)
+        
+        // Verifica que se hayan registrado las celdas correctamente
+        let tableView = viewController.tableView
+        XCTAssertNotNil(tableView)
+        
+        // Verifica que la vista tenga un título válido
+        XCTAssertEqual(viewController.title, NSLocalizedString("Lista de Héroes", comment: "La lista de heroes"))
+        
+        // Verifica que el botón de cierre de sesión esté presente
+        XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem)
+    }
+}

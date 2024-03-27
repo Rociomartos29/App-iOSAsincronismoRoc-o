@@ -27,8 +27,7 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
          // Codifica el ID del héroe en el cuerpo de la solicitud
          request.httpBody = try? JSONEncoder().encode(TransformationModelRequest(id: id))
          request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
-         print("Creating request with URL:", request.url ?? "No URL")
-         print("HTTP Method:", request.httpMethod ?? "No HTTP Method")
+
          
          // Agrega el token JWT si está disponible
          if let tokenJWT = KeyChainKC().loadKC(key: ConstantApp.CONST_TOKEN_ID_KEYCHAIN) {
@@ -41,7 +40,6 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
              
              // Verifica si la respuesta es un éxito (código de estado 200)
              if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == HTTPResponseCodes.SUCESS {
-                 print("Received response with status code:", httpResponse.statusCode)
                  // Decodifica los datos en un array de objetos Transformation
                  transformations = try JSONDecoder().decode([Transformation].self, from: data)
              }
